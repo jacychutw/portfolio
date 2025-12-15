@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Jacy Chu — Work & Impact</title>
+  <link rel="icon" href="jacy-logo.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <style>
+    /* ====== Base reset ====== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      color: #111827;
+      background-color: #f9fafb;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ====== Layout ====== */
+    .page {
+      max-width: 1040px;
+      margin: 0px auto 20px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 48px;
+    }
+
+    /* 大約 1024 以下（平板直立） */
+    @media (max-width: 1024px) {
+      .page {
+        max-width: 900px;
+        margin: 0px auto 16px;
+        padding: 20px;
+        grid-template-columns: 200px minmax(0, 1fr);
+        gap: 32px;
+      }
+    }
+
+    /* 768 以下（平板小 / 手機橫） */
+    @media (max-width: 768px) {
+      .page {
+        max-width: 700px;
+        margin: 0px auto 12px;
+        padding: 18px;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    /* 480 以下（手機） */
+    @media (max-width: 480px) {
+      .page {
+        margin: 0px auto 8px;
+        padding: 14px;
+      }
+    }
+
+    /* ====== Sidebar / Header ====== */
+    .sidebar {
+      position: sticky;
+      top: 24px;
+      align-self: flex-start;
+    }
+
+    @media (max-width: 1024px) {
+      .sidebar {
+        top: 16px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: static;
+      }
+    }
+
+    .avatar-wrapper {
+      width: 80px;
+      height: 80px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #e5e7eb;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+
+    .avatar-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: 600;
+      color: #9ca3af;
+    }
+
+    .name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 0 0 6px;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #9ca3af;
+      margin: 0 0 4px;
+    }
+
+    .website {
+      font-size: 1rem;
+      color: #6b7280;
+      margin-bottom: 16px;
+      word-break: break-all;
+    }
+
+    .sidebar-section-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #9ca3af;
+      margin-top: 24px;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-section-content {
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin-top: 0.1rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+      font-size: 1rem;
+      color: #4b5563
+    }
+
+    .nav-links li {
+      margin-bottom: 2px;
+    }
+
+    .nav-link {
+      cursor: pointer;
+      position: relative;
+      padding-left: 12px;
+      display: inline-block;
+    }
+
+    .nav-link:hover {
+      color: #31405f;
+      transform: translateX(2px);
+    }
+
+    .nav-link::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #d1d5db;
+      font-size: 1rem;
+      top: 0;
+    }
+
+    .nav-link--active::before {
+      color: #595342;
+    }
+
+    /* ====== Main content ====== */
+    .content {
+      border-left: 1px solid #e5e7eb;
+      padding-left: 32px;
+    }
+
+    @media (max-width: 1024px) {
+      .content {
+        padding-left: 24px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid #e5e7eb;
+        padding-top: 20px;
+      }
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        margin-bottom: 32px;
+      }
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 16px;
+    }
+
+    @media (max-width: 480px) {
+      .section-title {
+        font-size: 17px;
+        margin-bottom: 12px;
+      }
+    }
+
+    /* ====== Reusable blocks ====== */
+
+    .item {
+      margin-bottom: 16px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 4px 12px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      .item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+      }
+    }
+
+    .item-meta {
+      font-size: 13px;
+      color: #6b7280;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6b7280;
+      white-space: nowrap;
+    }
+
+    .item-description {
+      font-size: 14px;
+      color: #4b5563;
+      margin-top: 4px;
+    }
+
+    .bullet {
+      position: relative;
+      padding-left: 1.2em;
+      margin-bottom: 0.4rem;
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    .bullet::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0.1em;
+    }
+
+    .year-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin: 16px 0 4px;
+    }
+
+    .badge-link {
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+
+    .badge-link-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #111827;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 480px) {
+      .badge-link {
+        font-size: 13px;
+      }
+    }
+
+    /* ====== Contact list ====== */
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .contact-list li {
+      display: flex;
+      gap: 16px;
+      padding: 4px 0;
+      border-bottom: 1px dashed #e5e7eb;
+      flex-wrap: wrap;
+    }
+
+    .contact-list li:last-child {
+      border-bottom: none;
+    }
+
+    .contact-label {
+      color: #4b5563;
+      min-width: 80px;
+    }
+
+    .contact-label-content {
+      color: #6b7280;
+      min-width: 80px;
+    }
+
+    .contact-list a {
+      word-break: break-all;
+    }
+
+    @media (max-width: 480px) {
+      .contact-list {
+        font-size: 13px;
+      }
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 卡片本體 */
+    .medium-index-card {
+      border-radius: 16px;
+      padding: 1.6rem 1.8rem;
+      background: #edf0f5;
+      border: 1px solid #e5e7eb;
+      max-width: 720px;
+    }
+
+    /* 標題區 */
+    .medium-index-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .medium-index-title {
+      font-size: 17px;
+      font-weight: 600;
+      margin: 0.15rem 0;
+    }
+
+    .medium-index-stats {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    /* 內文描述 */
+    .medium-index-desc {
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+
+    /* 類別 tags */
+    .medium-index-tags {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      padding: 0;
+      margin: 0 0 20px 0;
+    }
+
+    .medium-index-tags li {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: #e5e7eb;
+      color: #374151;
+    }
+
+    /* CTA 按鈕 */
+    .medium-index-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid #111827;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: #111827;
+    }
+
+    .medium-index-cta:hover {
+      background: #111827;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+        /* ===== Logo & Login Page Design (item 2) ===== */
+
+    .item-logo-login {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* 小標題 */
+    .brand-section-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0 0 0.6rem;
+    }
+
+    /* Brand Identity 區塊 */
+    .brand-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    /* 單一品牌 block：logo + 文案 */
+    .brand-block {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .brand-logo img {
+      max-width: 90px;
+      height: auto;
+      display: block;
+    }
+
+    .brand-copy {
+      flex: 1;
+    }
+
+    .brand-name {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin: 0 0 0.25rem;
+    }
+
+    .brand-rationale-body {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #4b5563;
+      margin: 0;
+    }
+
+    /* Login visual 區塊 */
+    .login-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .login-desc {
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin: 0;
+    }
+
+    .login-visual {
+      margin: 0;
+      max-width: 100%;
+    }
+
+    .login-visual img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .login-visual figcaption {
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    /* RWD：窄螢幕時 logo 與文字改成直向排 */
+    @media (max-width: 640px) {
+      .brand-logo img {
+        max-width: 110px;
+      }
+    }
+
+
+    /* ===== Login Page Visuals Grid ===== */
+
+    .login-visuals-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 0.8rem;
+    }
+
+    .login-visual-item {
+      margin: 0;
+      text-align: center;
+    }
+
+    .login-visual-item img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .login-visual-item figcaption {
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      line-height: 1.4;
+    }
+
+    /* Mobile: one image per row */
+    @media (max-width: 480px) {
+      .login-visuals-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+    }
+
+
+    /* Make anchor scrolling land with proper spacing */
+    main section {
+      scroll-margin-top: 28px;
+    }
+
+    @media (max-width: 768px) {
+      main section {
+        scroll-margin-top: 16px;
+      }
+    }
+
+    .readytoclick {
+      text-decoration: underline;
+    }
+
+    .title {
+      margin: 8px 0;
+    }
+
+    .primary-role {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: #4b5563;
+    }
+
+    .secondary-role {
+      font-size: 16px;
+      color: #255290;
+      line-height: 1.6;
+      margin-top: 2px;
+      font-weight: 600;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <!-- ====== Sidebar (left) ====== -->
+    <aside class="sidebar">
+      <div class="avatar-wrapper">
+        <img src="jacy.png" style="width: 80px; height: 80px;">
+      </div>
+
+      <h1 class="name">Jacy Chu</h1>
+      <!-- <p class="subtitle">Front-end Engineer → Solutions Consultant</p> -->
+      <div class="title">
+        <div class="primary-role">Front-end Engineer</div>
+        <div class="secondary-role"><span style="color: rgb(57, 147, 176); font-size: 20px;">➜</span>&nbsp;Solutions Consultant</div>
+      </div>
+      <p class="subtitle">
+        Taipei, Taiwan
+      </p>
+      <p class="website" style="display: flex; gap: 8px; align-items: center;">
+        <a href="https://jacychutw.github.io/portfolio/" target="_blank" rel="noreferrer">
+          <img src="icon-website.png" style="width: 24px; height: 24px;">
+        </a>
+
+        <a href="mailto:jacy0303@gmail.com">
+          <img src="icon-mail.png" style="width: 24px; height: 24px;">
+        </a>
+
+        <a href="https://www.linkedin.com/in/jacychu/" target="_blank" rel="noreferrer">
+          <img src="icon-linkedin.png" style="width: 24px; height: 24px;">
+        </a>
+
+        <a href="https://github.com/jacychutw" target="_blank" rel="noreferrer">
+          <img src="icon-github.png" style="width: 24px; height: 24px;">
+        </a>
+      </p>
+
+      <p class="sidebar-section-title">Overview</p>
+      <p class="sidebar-section-content">
+        Translating technical complexity into clarity and adoption.
+      </p>
+
+      <p class="sidebar-section-title">Sections</p>
+      <ul class="nav-links">
+        <li><span class="nav-link nav-link--active" data-target="about">About</span></li>
+        <li><span class="nav-link" data-target="signaturedemo">Signature Demo</span></li>
+        <li><span class="nav-link" data-target="work">Work</span></li>
+        <li><span class="nav-link" data-target="selectedprojects">Projects</span></li>
+        <li><span class="nav-link" data-target="knowledgesharing">Knowledge</span></li>
+        <li><span class="nav-link" data-target="certificate">Certificates</span></li>
+        <li><span class="nav-link" data-target="education">Education</span></li>
+        <li><span class="nav-link" data-target="language">Language</span></li>
+        <li><span class="nav-link" data-target="interests">Interests</span></li>
+        <li><span class="nav-link" data-target="contact">Contact</span></li>
+      </ul>
+    </aside>
+
+    <!-- ====== Main content (right) ====== -->
+    <main class="content">
+      <!-- About -->
+      <section id="about">
+        <h2 class="section-title">About</h2>
+        <p style="font-size: 15px; color: #4b5563;">
+          I’m a multidisciplinary problem-solver with a background in business, UX design, and seven years of front-end engineering, enabling me to bridge user needs, technical constraints, and product decisions.
+        </p>
+        <p style="font-size: 15px; color: #4b5563;">
+          I specialize in translating complex systems into clear workflows and demos, with experience spanning UI/UX design, technical writing (70+ articles), and hands-on workshops that drive adoption and alignment.
+        </p>
+      </section>
+
+
+      <!-- Signature Demo  -->
+      <section id="signaturedemo">
+        <h2 class="section-title">Signature Demo - From Insight to Impact</h2>
+        <div class="video-container">
+          <div style="padding:56.25% 0 0 0;position:relative;">
+            <iframe src="https://player.vimeo.com/video/1145853219?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;"
+              title="From Insight to Impact — Figma Workflow Transformation I Led"></iframe>
+            <!-- <iframe
+              src="https://player.vimeo.com/video/1145853219?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;"
+              title="From Insight to Impact — Figma Workflow Transformation I Led"></iframe> -->
+
+            </div>
+          <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+        <p style="font-size: 15px; color: #4b5563;">
+          In 2021, I identified a workflow gap in our front-end team and led the adoption of Figma to unify design and handoff practices. I designed and delivered a
+          <a style="text-decoration: underline"href="https://vimeo.com/1146320916?share=copy&fl=sv&fe=ci" target="_blank" rel="noreferrer">105-minute hands-on workshop</a>
+          , and this video is a 2.5-minute highlight distilled from that session. The workflow has shaped our team’s process for over four years, improving clarity, speed, and collaboration.        </p>
+        <!-- <div style="display: inline-flex; align-items: center; gap: 6px;">
+          <img src="video.png" style="width: 20px; height: 20px;">
+          <a class="readytoclick" style="font-size: 13px;" href="https://vimeo.com/1146320916?share=copy&fl=sv&fe=ci" target="_blank" rel="noreferrer">
+            View full 105-minute hands-on workshop
+          </a>
+        </div> -->
+      </section>
+
+
+      <!-- Work Experience -->
+      <section id="work">
+        <h2 class="section-title">Work Experience</h2>
+
+        <!-- <div class="year-label">Jan 2019 — Present</div> -->
+        <article class="item">
+          <div class="item-header" style="margin: 4px 0;">
+            <span>Front-end Engineer — Cloud Platform Team, Foxconn</span><span>Jan 2019 — Present</span>
+            <!-- <span style="color: #9ca3af">Taipei, Taiwan · Remote collaboration (Kaohsiung-based team)</span> -->
+          </div>
+          <div style="font-size: 13px; color: #6b7280;">Taipei, Taiwan · Remote collaboration (Kaohsiung-based team)</div>
+          <div class="item-meta" style="margin: 8px 0  12px 0;">
+            <span class="pill">UI/UX</span>
+            <span class="pill">Data Visualization</span>
+            <span class="pill">Workflow Design</span>
+            <span class="pill">Global Deployment</span>
+          </div>
+          <p class="item-description">
+            <div class="bullet">Unified the design-to-engineering workflow by introducing Figma, reducing back-and-forth and improving cross-functional delivery speed.</div>
+            <div class="bullet">Built reusable UI components and scalable front-end patterns adopted across global platforms, supporting teams in Taiwan, China, the U.S., Mexico, and Vietnam.</div>
+            <div class="bullet">Improved UI structure, information hierarchy, and interaction patterns across internal platforms, contributing to measurable business impact (including a 2.5% increase in system-generated revenue).</div>
+            <div class="bullet">Owned end-to-end front-end delivery for Mantidfly (Vue.js) and Cicada (jQuery), covering wireframes, UI/UX refinement, feature implementation, and i18n support.</div>
+            <div class="bullet">Expanded into API integration and backend fundamentals, reducing dependency bottlenecks and improving collaboration between engineering and product teams.</div>
+          </p>
+        </article>
+      </section>
+
+
+      <!-- Side Projects -->
+      <section id="selectedprojects">
+        <h2 class="section-title">Selected Projects</h2>
+
+        <article class="item">
+          <div class="item-header">
+            <span style="font-weight: 600;">1. UI/UX Refinement for Internal Monitoring Dashboard (Confidential)</span>
+          </div>
+          <div class="item-meta" style="margin: 12px 0;">
+            <span class="pill">UI/UX</span>
+            <span class="pill">Data Visualization</span>
+            <span class="pill">Workflow Improvement</span>
+            <span class="pill">Cross-team Collaboration</span>
+          </div>
+          <p class="item-description">
+            Collaborated cross-functionally with the Data Analysis group to redesign an internal monitoring system, after being invited for my UI/UX expertise. Led a dark-mode visual refresh to improve readability and usability in a high-density operational dashboard.
+            <br>
+            Through usage review and workflow analysis, I identified deeper UX issues beyond visual design, including fragmented layouts and unclear task grouping. I proposed a revised information architecture with clearer hierarchy and tab-based categorization, significantly improving operational clarity and receiving strong positive feedback from both engineers and management.
+          </p>
+        </article>
+
+
+        <article class="item">
+          <div class="item-header">
+            <span style="font-weight: 600;">2. Platform Visual Identity & Product Illustration</span>
+          </div>
+          <div class="item-meta" style="margin: 12px 0;">
+            <span class="pill">Visual Design</span>
+            <span class="pill">Brand Identity</span>
+            <span class="pill">Illustration</span>
+            <span class="pill">Design System</span>
+          </div>
+
+          <div class="item-logo-login">
+            <!-- Intro -->
+            <span class="item-description">
+              I was responsible for designing platform-level logos and a set of branded visual assets across multiple internal product lines. This included defining consistent visual language and illustration styles to support product identity while scaling across different systems.
+            </span>
+
+            <!-- 1. Brand Identity -->
+            <div class="brand-section">
+              <h5 class="brand-section-title">(1) Brand Identity — Cicada &amp; Mantidfly</h5>
+
+              <!-- Cicada -->
+              <div class="brand-block">
+                <div class="brand-logo">
+                  <!-- TODO: 換成你的 Cicada logo 圖片路徑 -->
+                  <img src="logo-cicada.png" alt="Cicada logo" />
+                </div>
+                <div class="brand-copy">
+                  <h5 class="brand-name">Cicada — Data Analytics Platform</h5>
+                  <p class="brand-rationale-body">
+                    A platform logo emphasizing clarity and structured data flow.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Mantidfly -->
+              <div class="brand-block">
+                <div class="brand-logo">
+                  <!-- TODO: 換成你的 Mantidfly logo 圖片路徑 -->
+                  <img src="logo-mantidfly.png" alt="Mantidfly logo" />
+                </div>
+                <div class="brand-copy">
+                  <h5 class="brand-name">Mantidfly — Monitoring &amp; Notification Platform</h5>
+                  <p class="brand-rationale-body">
+                    A logo reflecting alertness and smooth message delivery.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Login Page Visual Design -->
+            <section class="login-section">
+              <h5 class="brand-section-title">(2) Login Page Visual Design</h5>
+              <p class="login-desc">
+                A series of illustrated login-page backgrounds designed for different enterprise products, maintaining a clean and consistent visual style across the platform.
+              </p>
+
+              <div class="login-visuals-grid">
+                <figure class="login-visual-item">
+                  <img src="pcb.png" alt="PCB-related systems login visual" />
+                  <figcaption>PCB-related system</figcaption>
+                </figure>
+
+                <figure class="login-visual-item">
+                  <img src="notify.png" alt="Message broadcasting login visual" />
+                  <figcaption>Message broadcasting</figcaption>
+                </figure>
+
+                <figure class="login-visual-item">
+                  <img src="ai.png" alt="AI applications login visual" />
+                  <figcaption>AI application</figcaption>
+                </figure>
+
+                <figure class="login-visual-item">
+                  <img src="factory.png" alt="Factory & industrial automation login visual" />
+                  <figcaption>Factory &amp; industrial automation</figcaption>
+                </figure>
+              </div>
+            </section>
+          </div>
+        </article>
+
+
+        <article class="item">
+          <div class="item-header">
+            <span style="font-weight: 600;">3. Personal Project — Space Online Shop</span>
+          </div>
+          <div class="item-meta" style="margin: 12px 0;">
+            <span class="pill">Frontend</span>
+            <span class="pill">Vue.js</span>
+            <span class="pill">Component-based Architecture</span>
+            <span class="pill">Firebase Integration</span>
+          </div>
+          <p class="item-description">
+          Independently designed and developed a single-page online shop using Vue.js, focusing on component-based architecture and dynamic UI updates.
+          <br>
+          The project simulates a real-world e-commerce experience with state-driven rendering and reusable Vue components, ensuring clear separation of presentation and logic. Firebase is integrated for data storage and retrieval, enabling dynamic content updates and a maintainable application structure.
+          </p>
+          <span class="contact-label-content" style="font-size: 14px;">
+            <div>
+              <span>•&nbsp;&nbsp;Website:</span>&nbsp;
+              <a class="readytoclick" href="https://space-online-shop.web.app/" target="_blank" rel="noreferrer" class="readytoclick">
+                https://space-online-shop.web.app/
+              </a>
+            </div>
+            <div>
+              <span>•&nbsp;&nbsp;Technical Write-up:</span>&nbsp;
+              <a class="readytoclick" href="https://jacychu.medium.com/space-%E9%9B%BB%E5%95%86%E5%B9%B3%E5%8F%B0%E5%AF%A6%E4%BD%9C-%E4%B8%8A-ebc9a2f1636f" target="_blank" rel="noreferrer">
+                Implementation notes
+              </a>
+            </div>
+          </span>
+        </article>
+
+      </section>
+
+
+      <!-- Knowledge Sharing -->
+      <section id="knowledgesharing">
+        <h2 class="section-title">Knowledge Sharing</h2>
+
+        <!-- <p class="item-description">
+          Over the past few years, I’ve written more than 70 technical and UX articles covering JavaScript, Vue, React, D3.js, Django, CSS, Three.js, and full-stack development. My writing focuses on turning complex engineering concepts into clear, actionable explanations—helping teammates, junior developers, and the broader community understand tools, frameworks, and design principles with confidence. This body of work reflects the way I think: structured, detail-oriented, and deeply committed to making technical knowledge accessible and reusable.
+        </p> -->
+
+        <p class="item-description">
+          Over the past few years, I’ve written 70+ technical and UX articles across JavaScript, Vue, React, D3.js, CSS, Three.js, and full-stack development—focusing on turning complex engineering concepts into clear, actionable guidance for teams and learners.
+        </p>
+
+        <!-- Medium index teaser card -->
+        <article class="medium-index-card">
+          <header class="medium-index-header">
+            <div class="medium-index-meta">
+              <div><img src="mediumlogo.png" style="width: 120px; margin: 4px 0 16px 0;"></div>
+              <h3 class="medium-index-title">Medium Article Collection</h3>
+              <span class="medium-index-stats">
+                12 series · 78 articles · Updated regularly
+              </span>
+            </div>
+          </header>
+
+          <!-- <p class="medium-index-desc">
+            A curated index of my Chinese technical articles — a single place to explore my writing across frontend engineering, frameworks, and practical development insights.
+          </p> -->
+
+
+          <p class="medium-index-desc">
+            A curated index of my Chinese technical articles, covering frontend engineering, frameworks, and practical development topics.
+          </p>
+
+          <ul class="medium-index-tags">
+            <li>JavaScript Fundamentals</li>
+            <li>Vue & Ecosystem</li>
+            <li>Three.js & Interactive 3D</li>
+          </ul>
+
+          <a class="medium-index-cta"
+            href="https://medium.com/@jacychu/medium-%E6%96%87%E7%AB%A0%E5%88%97%E8%A1%A8-8702051f1aed" target="_blank"
+            rel="noopener noreferrer">
+            View full index on Medium
+          </a>
+        </article>
+      </section>
+
+
+      <!-- Certificate -->
+      <section id="certificate">
+        <h2 class="section-title">Certificates & Achievements</h2>
+        <p class="item-description">
+          • 2nd Place — Presentation Competition, Foxconn Shinkansen Program (Sep 2019) <br>
+          • AWS Certified Cloud Practitioner (Nov 2025)
+        </p>
+      </section>
+
+
+      <!-- Education -->
+      <section id="education">
+        <h2 class="section-title">Education</h2>
+
+        <article class="item">
+          <div class="item-header">
+            <span>Bachelor of Business Administration</span>
+            <span>2014 – 2018</span>
+          </div>
+          <div class="item-meta">
+            <span>National Chengchi University &nbsp;&nbsp;—</span>
+            <span>Taipei, Taiwan</span>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="item-header">
+            <span>Fall Exchange Program</span>
+            <span>Sep 2017 – Dec 2017</span>
+          </div>
+          <div class="item-meta">
+            <span>University of Navarra &nbsp;&nbsp;—</span>
+            <span>Pamplona, Spain</span>
+          </div>
+        </article>
+      </section>
+
+
+      <!-- Language -->
+      <section id="language">
+        <h2 class="section-title">Language</h2>
+        <p class="item-description">
+          Chinese (Native) · English (Fluent, TOEIC 905/990) · Spanish (Basic)
+        </p>
+      </section>
+
+
+      <!-- Interests -->
+      <section id="interests">
+        <h2 class="section-title">Interests</h2>
+        <p class="item-description">
+          Fitness & wellness · Music & piano · Travel & cultural discovery
+        </p>
+      </section>
+
+
+      <!-- Contact -->
+      <section id="contact">
+        <h2 class="section-title">Contact</h2>
+
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Email</span>
+            <span class="contact-label-content">jacy0303@gmail.com
+              <!-- <a href="mailto:jacy0303@gmail.com">jacy0303@gmail.com</a> -->
+            </span>
+          </li>
+          <li>
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-label-content">
+              <a class="readytoclick" href="https://www.linkedin.com/in/jacychu/" target="_blank" rel="noreferrer">
+                https://www.linkedin.com/in/jacychu/
+              </a>
+            </span>
+          </li>
+          <li>
+            <span class="contact-label">GitHub</span>
+            <span class="contact-label-content">
+              <a class="readytoclick" href="https://github.com/jacychutw" target="_blank" rel="noreferrer">
+                https://github.com/jacychutw
+              </a>
+            </span>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Smooth scroll to section when clicking sidebar links
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = Array.from(document.querySelectorAll("main section"));
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        const targetId = link.getAttribute("data-target");
+        const targetEl = document.getElementById(targetId);
+        if (!targetEl) return;
+
+        targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      });
+    });
+
+    // Highlight active section in sidebar on scroll
+    window.addEventListener("scroll", () => {
+      const scrollPos = window.scrollY + 80;
+      let activeId = null;
+
+      for (const sec of sections) {
+        if (scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
+          activeId = sec.id;
+          break;
+        }
+      }
+
+      if (!activeId) return;
+
+      navLinks.forEach((link) => {
+        const id = link.getAttribute("data-target");
+        link.classList.toggle("nav-link--active", id === activeId);
+      });
+    });
+
+  </script>
+</body>
+
+<!-- <p class="item-description">
+  • Introduced Figma and unified the design-to-engineering workflow, improving clarity, reducing unnecessary back-and-forth, and enabling faster, more aligned delivery across cross-functional teams.<br>
+  • Improved UI, information hierarchy, and interaction patterns for internal platforms, increasing usability and contributing to measurable business impact, including a 2.5% rise in system-generated revenue and higher analyst efficiency.<br>
+  • Took ownership of end-to-end front-end delivery across Mantidfly (Vue.js) and Cicada (jQuery), covering wireframes, UI/UX refinement, feature implementation, and i18n support.<br>
+  • Built reusable UI components and scalable front-end patterns used across platforms serving teams in Taiwan, China, the U.S., Mexico, and Vietnam, enabling consistent experiences and supporting faster expansion across global projects.<br>
+  • Expanded into API integration and backend fundamentals, reducing dependency bottlenecks, accelerating feature development, and strengthening communication between engineering and product stakeholders.
+</p> -->
+</html>
